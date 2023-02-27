@@ -563,9 +563,9 @@ INSERT-IMMEDIATELY-P - should insert first available logger?"
              (log-message (turbo-log--get-log-text past-from-clipboard-p))
              (extracted-log-message (when (and identifier-node-types (not (region-active-p)))
                                       (turbo-log--extract-identifier-node-types identifier-node-types divider)))
-             (log-message (if (region-active-p)
-                              log-message
-                            extracted-log-message))
+             ;; (log-message (if (region-active-p)
+             ;;                  log-message
+             ;;                extracted-log-message))
              (identifier-formatter-rules (turbo-log--get-logger-config logger-config identifier-formatter-rules))
              (log-message (if (and identifier-formatter-rules log-message tsc-allowed-p)
                               (turbo-log--try-normalize-identifiers identifier-formatter-rules log-message)
