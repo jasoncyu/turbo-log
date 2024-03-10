@@ -483,7 +483,7 @@ COMMENT-TYPE - type of comment, could be `commented' `uncommented' and `both'"
          (regexps '()))
 
     (dolist (l loggers)
-      (push (concat log-prefix (format (turbo-log--normilize-regexp l) (concat log-message "[^\'\(\);]+")) ";?") regexps))
+      (push (concat log-prefix (format (turbo-log--normilize-regexp l) (concat log-message "[^\'\(\);]*")) ";?") regexps))
 
     (unless logger-meta (message "Sorry, turbo-log is not available for %s." major-mode))
     (string-join regexps "\\\|")))
